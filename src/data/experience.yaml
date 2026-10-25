@@ -1,29 +1,47 @@
-# Newest first is not required; entries are sorted by `start` automatically.
-# Leave out `end` for your current role.
+# Entries are sorted by `start` automatically. Leave out `end` for your current role.
+# Dates accept YYYY or YYYY-MM; the duration ("2 yrs 3 mos") only shows when months are known.
 
-- id: current-company
-  company: Current Company
-  companyUrl: https://example.com
-  role: Senior Flutter Engineer
-  location: City, Country (Hybrid)
-  employmentType: Full-time
-  start: "2023-01"
-  summary: One sentence about the product and your scope.
+- id: 1komma5
+  company: 1KOMMA5° Heartbeat AI GmbH
+  role: Senior QA Engineer
+  location: Remote, Germany
+  start: "2024"
   highlights:
-    - Led X, resulting in a measurable outcome (e.g. reduced crash rate by 60%).
-    - Built Y used by Z users / teams.
-    - Introduced a practice or tool that improved delivery speed.
-  tech: [Flutter, Dart, Riverpod, Melos, GitHub Actions]
+    - Built an Appium + BrowserStack automation framework from scratch (Java / TestNG), covering 70+ E2E scenarios across iOS and Android, integrated into GitHub Actions for nightly and PR runs.
+    - Established the cross-platform release QA process (web + mobile); owned regression strategy, exploratory testing and release sign-off — reducing post-release hotfixes by ~40%.
+    - Introduced AI-augmented QA workflows using Cursor (rules, skills, Linear MCP server) and GitHub Copilot, accelerating Page Object authoring and test maintenance by ~40%.
+    - Piloted AI-assisted PR review with Cursor Background Agents / Bugbot for test-code quality gates and earlier defect detection.
+    - Onboarded and mentored junior QA engineers; partnered with Product, Engineering and DevOps to embed quality gates earlier in the SDLC.
+  tech: [Appium, BrowserStack, Java, TestNG, GitHub Actions, Cursor, GitHub Copilot]
 
-- id: previous-company
-  company: Previous Company
-  role: Flutter Developer
-  location: City, Country
-  employmentType: Full-time
-  start: "2020-03"
-  end: "2022-12"
-  summary: One sentence about the product and your scope.
+- id: powercloud
+  company: powerCloud GmbH
+  role: Senior QA Engineer
+  location: Offenburg, Germany (Hybrid)
+  start: "2022"
+  end: "2024"
   highlights:
-    - Shipped N apps to the App Store and Google Play.
-    - Achievement with a number.
-  tech: [Flutter, Firebase, Bloc]
+    - Automated and integrated 100+ E2E tests (UI & API) into the CI/CD pipeline, reducing regression cycles from 3 days to 1.5 days.
+    - Drove shift-left initiatives including contract testing and pre-merge automation gates, partnering with developers and product owners from requirement reviews through release.
+    - Mentored junior QA engineers and established code-review standards for the automation codebase.
+
+- id: lodestone-lead
+  company: Lodestone Software Services
+  role: QA Lead
+  location: Ahmedabad, India
+  start: "2017"
+  end: "2021"
+  highlights:
+    - Led QA teams of 7 engineers for international clients including Reddit, Xapo and DoorDash.
+    - Implemented streamlined QA processes (risk-based testing, prioritisation, defect triage), improving product quality and reducing time-to-market by ~25%.
+    - Owned client communication, sprint planning and QA reporting to senior stakeholders; hired, onboarded and mentored QA engineers and defined career-growth tracks.
+
+- id: lodestone-engineer
+  company: Lodestone Software Services
+  role: QA Engineer
+  location: Ahmedabad, India
+  start: "2015"
+  end: "2017"
+  highlights:
+    - Executed functional, regression, system, UAT and performance testing for web and mobile applications, working closely with developers to triage and resolve defects.
+    - Authored detailed test plans, test cases and bug reports, ensuring thorough coverage and clean developer hand-offs.

@@ -2,7 +2,7 @@ import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const yearMonth = z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/, 'Use YYYY-MM');
+const partialDate = z.string().regex(/^\d{4}(-(0[1-9]|1[0-2]))?$/, 'Use YYYY or YYYY-MM');
 
 const experience = defineCollection({
 	loader: file('src/data/experience.yaml'),
@@ -12,10 +12,10 @@ const experience = defineCollection({
 		role: z.string(),
 		location: z.string(),
 		employmentType: z.string().optional(),
-		start: yearMonth,
+		start: partialDate,
 		// Omit for the current position.
-		end: yearMonth.optional(),
-		summary: z.string(),
+		end: partialDate.optional(),
+		summary: z.string().optional(),
 		highlights: z.array(z.string()).default([]),
 		tech: z.array(z.string()).default([]),
 	}),
@@ -26,8 +26,8 @@ const certificates = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		issuer: z.string(),
-		issued: yearMonth,
-		expires: yearMonth.optional(),
+		issued: partialDate.optional(),
+		expires: partialDate.optional(),
 		credentialId: z.string().optional(),
 		verifyUrl: z.url().optional(),
 	}),
@@ -42,6 +42,8 @@ const projects = defineCollection({
 			role: z.string(),
 			period: z.string(),
 			tech: z.array(z.string()),
+			// Drafts are excluded from the build until set to false.
+			draft: z.boolean().default(false),
 			featured: z.boolean().default(false),
 			order: z.number().default(100),
 			cover: image().optional(),

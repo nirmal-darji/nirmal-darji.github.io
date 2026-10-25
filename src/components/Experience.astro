@@ -10,7 +10,9 @@ const jobs = (await getCollection('experience')).toSorted((a, b) => b.data.start
 <Section id="experience" eyebrow="Experience" title="Where I've worked">
 	<ol class="timeline">
 		{
-			jobs.map(({ data: job }) => (
+			jobs.map(({ data: job }) => {
+				const duration = formatDuration(job.start, job.end);
+				return (
 				<li class="entry reveal">
 					<span class="dot" aria-hidden="true" />
 					<article class="card job">
@@ -24,11 +26,11 @@ const jobs = (await getCollection('experience')).toSorted((a, b) => b.data.start
 							</div>
 							<p class="when muted">
 								<span>{formatRange(job.start, job.end)}</span>
-								<span class="duration">{formatDuration(job.start, job.end)}</span>
+								{duration && <span class="duration">{duration}</span>}
 							</p>
 						</header>
 						<p class="location muted">{job.location}</p>
-						<p class="summary">{job.summary}</p>
+						{job.summary && <p class="summary">{job.summary}</p>}
 						{job.highlights.length > 0 && (
 							<ul class="highlights">
 								{job.highlights.map((item) => (
@@ -45,7 +47,8 @@ const jobs = (await getCollection('experience')).toSorted((a, b) => b.data.start
 						)}
 					</article>
 				</li>
-			))
+				);
+			})
 		}
 	</ol>
 </Section>
@@ -129,7 +132,7 @@ const jobs = (await getCollection('experience')).toSorted((a, b) => b.data.start
 	}
 
 	.highlights {
-		margin: 0.75rem 0 1rem;
+		margin: 0.9rem 0 1rem;
 		padding-left: 1.2rem;
 		display: grid;
 		gap: 0.35rem;
