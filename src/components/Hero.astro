@@ -77,7 +77,7 @@ import { withBase } from '../lib/url';
 
 	.intro {
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: auto 1fr;
 		align-items: center;
 		gap: 3rem;
 	}
@@ -138,6 +138,7 @@ import { withBase } from '../lib/url';
 	}
 
 	.portrait {
+		order: -1;
 		position: relative;
 		width: 260px;
 		aspect-ratio: 1;
@@ -190,7 +191,6 @@ import { withBase } from '../lib/url';
 		}
 
 		.portrait {
-			order: -1;
 			width: 180px;
 		}
 	}
