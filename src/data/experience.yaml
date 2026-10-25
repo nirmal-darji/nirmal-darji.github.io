@@ -5,7 +5,7 @@
   company: 1KOMMA5° Heartbeat AI GmbH
   role: Senior QA Engineer
   location: Remote, Germany
-  start: "2024"
+  start: "2024-09"
   summary: QA for the Heartbeat energy-management app (iOS & Android) — owning mobile test automation, release quality and AI-native QA tooling.
   highlights:
     - Built the Appium + BrowserStack automation framework from scratch (Java / TestNG) — 90+ E2E tests and 35+ page objects across iOS and Android, with suites for three markets and the onboarding flows, running nightly in GitHub Actions on every new app build.
@@ -22,8 +22,8 @@
   company: powerCloud GmbH
   role: Senior QA Engineer
   location: Offenburg, Germany (Hybrid)
-  start: "2022"
-  end: "2024"
+  start: "2022-02"
+  end: "2024-08"
   highlights:
     - Automated and integrated 100+ E2E tests (UI & API) into the CI/CD pipeline, reducing regression cycles from 3 days to 1.5 days.
     - Drove shift-left initiatives including contract testing and pre-merge automation gates, partnering with developers and product owners from requirement reviews through release.
@@ -33,8 +33,8 @@
   company: Lodestone Software Services
   role: QA Lead
   location: Ahmedabad, India
-  start: "2017"
-  end: "2021"
+  start: "2017-07"
+  end: "2021-12"
   highlights:
     - Led QA teams of 7 engineers for international clients including Reddit, Xapo and DoorDash.
     - Implemented streamlined QA processes (risk-based testing, prioritisation, defect triage), improving product quality and reducing time-to-market by ~25%.
@@ -44,8 +44,8 @@
   company: Lodestone Software Services
   role: QA Engineer
   location: Ahmedabad, India
-  start: "2015"
-  end: "2017"
+  start: "2015-04"
+  end: "2017-06"
   highlights:
     - Executed functional, regression, system, UAT and performance testing for web and mobile applications, working closely with developers to triage and resolve defects.
     - Authored detailed test plans, test cases and bug reports, ensuring thorough coverage and clean developer hand-offs.
