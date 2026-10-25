@@ -26,6 +26,7 @@ export const profile: Profile = {
 		'11+ years building and scaling QA functions — from bootstrapping automation from zero to leading QA teams and owning release sign-off for products serving millions of users.',
 	location: 'Ahmedabad, India',
 	email: 'n.darji13@gmail.com',
+	cv: 'cv.pdf',
 	socials: {
 		github: 'https://github.com/nirmal-darji',
 		linkedin: 'https://www.linkedin.com/in/nirmal-darji/',
