@@ -1,0 +1,14 @@
+# Add a verifyUrl (Credly, issuer page, ...) wherever possible; recruiters trust verifiable credentials.
+
+- id: example-cert-1
+  name: Example Certification
+  issuer: Issuer Name
+  issued: "2024-05"
+  credentialId: ABC-123
+  verifyUrl: https://www.credly.com/
+
+- id: example-cert-2
+  name: Another Certification
+  issuer: Issuer Name
+  issued: "2023-02"
+  expires: "2026-02"

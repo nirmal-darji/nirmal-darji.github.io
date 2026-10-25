@@ -1,0 +1,61 @@
+---
+import Section from './Section.astro';
+import { profile } from '../data/profile';
+---
+
+<Section id="about" eyebrow="About" title="A quick introduction">
+	<div class="layout">
+		<div class="copy reveal">
+			{profile.about.map((paragraph) => <p>{paragraph}</p>)}
+		</div>
+		<div class="skills">
+			{
+				profile.skills.map((group) => (
+					<div class="card group reveal">
+						<h3>{group.group}</h3>
+						<ul class="chips">
+							{group.items.map((item) => (
+								<li class="chip">{item}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</Section>
+
+<style>
+	.layout {
+		display: grid;
+		grid-template-columns: 1.1fr 1fr;
+		gap: 2.5rem;
+		align-items: start;
+	}
+
+	.copy {
+		display: grid;
+		gap: 1rem;
+		font-size: 1.05rem;
+	}
+
+	.skills {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.group {
+		padding: 1.25rem 1.4rem;
+	}
+
+	h3 {
+		font-size: 0.95rem;
+		margin-bottom: 0.75rem;
+	}
+
+	@media (max-width: 820px) {
+		.layout {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

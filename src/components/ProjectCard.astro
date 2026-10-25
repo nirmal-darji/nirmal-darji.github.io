@@ -1,0 +1,110 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import ProjectLinks from './ProjectLinks.astro';
+import { withBase } from '../lib/url';
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { data } = project;
+const href = withBase(`/projects/${project.id}/`);
+---
+
+<article class="card project reveal">
+	<div class="cover" aria-hidden={data.cover ? undefined : 'true'}>
+		{
+			data.cover ? (
+				<Image src={data.cover} alt={data.coverAlt ?? ''} widths={[480, 960]} sizes="(max-width: 720px) 100vw, 480px" />
+			) : (
+				<span class="placeholder">{data.title.charAt(0)}</span>
+			)
+		}
+	</div>
+	<div class="body">
+		<p class="meta muted">{data.role} · {data.period}</p>
+		<h3>
+			<a class="stretched" href={href}>{data.title}</a>
+		</h3>
+		<p class="summary muted">{data.summary}</p>
+		<ul class="chips">
+			{data.tech.map((item) => <li class="chip">{item}</li>)}
+		</ul>
+		<ProjectLinks links={data.links} />
+	</div>
+</article>
+
+<style>
+	.project {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.cover {
+		aspect-ratio: 16 / 9;
+		background:
+			radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--accent-1) 55%, transparent), transparent 60%),
+			radial-gradient(circle at 80% 80%, color-mix(in srgb, var(--accent-2) 50%, transparent), transparent 60%),
+			var(--bg-elevated);
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+	}
+
+	.cover :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+
+	.project:hover .cover :global(img) {
+		transform: scale(1.04);
+	}
+
+	.placeholder {
+		font-size: 4rem;
+		font-weight: 800;
+		color: rgb(255 255 255 / 0.85);
+		transition: transform 0.5s ease;
+	}
+
+	.project:hover .placeholder {
+		transform: scale(1.1) rotate(-4deg);
+	}
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1.4rem 1.5rem 1.5rem;
+		flex: 1;
+	}
+
+	.meta {
+		font-size: 0.82rem;
+		font-family: var(--font-mono);
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	.stretched {
+		text-decoration: none;
+	}
+
+	.stretched::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	.summary {
+		flex: 1;
+	}
+</style>

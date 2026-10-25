@@ -1,0 +1,84 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import ExternalLink from './ExternalLink.astro';
+import { profile } from '../data/profile';
+import { withBase } from '../lib/url';
+---
+
+<Section id="contact" eyebrow="Contact" title="Let's talk">
+	<div class="card panel reveal">
+		<p class="lead">
+			I'm happy to chat about roles, projects, or anything Flutter. The fastest way to reach me is email.
+		</p>
+		<a class="email gradient-text" href={`mailto:${profile.email}`}>{profile.email}</a>
+		<div class="actions no-print">
+			{
+				profile.cv && (
+					<a class="btn btn-primary" href={withBase(profile.cv)} download>
+						<Icon name="download" /> Download CV
+					</a>
+				)
+			}
+			{
+				profile.socials.linkedin && (
+					<ExternalLink class="btn" href={profile.socials.linkedin}>
+						<Icon name="linkedin" /> LinkedIn
+					</ExternalLink>
+				)
+			}
+			{
+				profile.socials.github && (
+					<ExternalLink class="btn" href={profile.socials.github}>
+						<Icon name="github" /> GitHub
+					</ExternalLink>
+				)
+			}
+		</div>
+	</div>
+</Section>
+
+<style>
+	.panel {
+		padding: clamp(1.75rem, 5vw, 3rem);
+		text-align: center;
+		display: grid;
+		justify-items: center;
+		gap: 1.25rem;
+		overflow: hidden;
+	}
+
+	.panel::before {
+		content: '';
+		position: absolute;
+		inset: -1px;
+		border-radius: inherit;
+		padding: 1px;
+		background: var(--gradient);
+		mask:
+			linear-gradient(#000 0 0) content-box,
+			linear-gradient(#000 0 0);
+		mask-composite: exclude;
+		opacity: 0.6;
+		pointer-events: none;
+	}
+
+	.lead {
+		max-width: 36rem;
+		font-size: 1.1rem;
+	}
+
+	.email {
+		font-size: clamp(1.3rem, 4vw, 2rem);
+		font-weight: 800;
+		text-decoration: none;
+		word-break: break-all;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+</style>

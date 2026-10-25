@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import ExternalLink from './ExternalLink.astro';
+
+interface Props {
+	links: CollectionEntry<'projects'>['data']['links'];
+}
+
+const { links } = Astro.props;
+
+const items = [
+	{ href: links.live, label: 'Live', icon: 'external' },
+	{ href: links.appStore, label: 'App Store', icon: 'apple' },
+	{ href: links.playStore, label: 'Google Play', icon: 'play' },
+	{ href: links.repo, label: 'Source', icon: 'github' },
+] as const;
+---
+
+<ul class="links">
+	{
+		items
+			.filter((item) => item.href)
+			.map((item) => (
+				<li>
+					<ExternalLink class="link" href={item.href!}>
+						<Icon name={item.icon} size={15} /> {item.label}
+					</ExternalLink>
+				</li>
+			))
+	}
+</ul>
+
+<style>
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		list-style: none;
+	}
+
+	.link {
+		position: relative;
+		z-index: 2;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		font-size: 0.88rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--muted);
+		transition: color 0.2s ease;
+	}
+
+	.link:hover {
+		color: var(--text);
+	}
+</style>

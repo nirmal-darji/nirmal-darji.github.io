@@ -1,0 +1,186 @@
+---
+import Icon from './Icon.astro';
+import ExternalLink from './ExternalLink.astro';
+import { profile } from '../data/profile';
+import { withBase } from '../lib/url';
+---
+
+<section class="container hero" aria-labelledby="hero-title">
+	{
+		profile.availability && (
+			<p class="availability">
+				<span class="pulse" aria-hidden="true" />
+				{profile.availability}
+			</p>
+		)
+	}
+	<h1 id="hero-title">
+		Hi, I'm <span class="gradient-text">{profile.name}</span>
+	</h1>
+	<p class="headline">{profile.headline}</p>
+	<p class="tagline muted">{profile.tagline}</p>
+	<p class="location muted"><Icon name="map" size={16} /> {profile.location}</p>
+
+	<div class="actions no-print">
+		{
+			profile.cv && (
+				<a class="btn btn-primary" href={withBase(profile.cv)} download>
+					<Icon name="download" /> Download CV
+				</a>
+			)
+		}
+		<a class="btn" href={`mailto:${profile.email}`}><Icon name="mail" /> Email me</a>
+		{
+			profile.socials.linkedin && (
+				<ExternalLink class="btn" href={profile.socials.linkedin}>
+					<Icon name="linkedin" /> LinkedIn
+				</ExternalLink>
+			)
+		}
+		{
+			profile.socials.github && (
+				<ExternalLink class="btn" href={profile.socials.github}>
+					<Icon name="github" /> GitHub
+				</ExternalLink>
+			)
+		}
+	</div>
+
+	<ul class="stats">
+		{
+			profile.stats.map((stat) => (
+				<li class="card stat">
+					<span class="value gradient-text">{stat.value}</span>
+					<span class="label muted">{stat.label}</span>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	.hero {
+		padding-block: clamp(4rem, 12vh, 8rem) 3rem;
+	}
+
+	.hero > * {
+		animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+
+	.hero > :nth-child(2) {
+		animation-delay: 0.05s;
+	}
+	.hero > :nth-child(3) {
+		animation-delay: 0.1s;
+	}
+	.hero > :nth-child(4) {
+		animation-delay: 0.15s;
+	}
+	.hero > :nth-child(5) {
+		animation-delay: 0.2s;
+	}
+	.hero > :nth-child(6) {
+		animation-delay: 0.25s;
+	}
+	.hero > :nth-child(7) {
+		animation-delay: 0.3s;
+	}
+
+	.availability {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		padding: 0.35rem 0.85rem;
+		border-radius: 999px;
+		border: 1px solid var(--border);
+		background: var(--surface);
+		font-size: 0.85rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.pulse {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: #22c55e;
+		box-shadow: 0 0 0 0 rgb(34 197 94 / 0.6);
+		animation: pulse 2s infinite;
+	}
+
+	h1 {
+		font-size: clamp(2.4rem, 7vw, 4.4rem);
+		font-weight: 800;
+	}
+
+	.headline {
+		font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+		font-weight: 600;
+		margin-top: 0.75rem;
+	}
+
+	.tagline {
+		max-width: 46rem;
+		font-size: 1.1rem;
+		margin-top: 1rem;
+	}
+
+	.location {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin-top: 1rem;
+		font-size: 0.95rem;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 2rem;
+	}
+
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		gap: 1rem;
+		margin-top: 3.5rem;
+		list-style: none;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		padding: 1.25rem 1.4rem;
+	}
+
+	.value {
+		font-size: 2rem;
+		font-weight: 800;
+		line-height: 1.1;
+	}
+
+	.label {
+		font-size: 0.9rem;
+		margin-top: 0.25rem;
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	@keyframes pulse {
+		70% {
+			box-shadow: 0 0 0 10px rgb(34 197 94 / 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgb(34 197 94 / 0);
+		}
+	}
+</style>

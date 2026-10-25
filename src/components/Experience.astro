@@ -1,0 +1,147 @@
+---
+import { getCollection } from 'astro:content';
+import Section from './Section.astro';
+import ExternalLink from './ExternalLink.astro';
+import { formatDuration, formatRange } from '../lib/dates';
+
+const jobs = (await getCollection('experience')).toSorted((a, b) => b.data.start.localeCompare(a.data.start));
+---
+
+<Section id="experience" eyebrow="Experience" title="Where I've worked">
+	<ol class="timeline">
+		{
+			jobs.map(({ data: job }) => (
+				<li class="entry reveal">
+					<span class="dot" aria-hidden="true" />
+					<article class="card job">
+						<header>
+							<div>
+								<h3>{job.role}</h3>
+								<p class="company">
+									{job.companyUrl ? <ExternalLink href={job.companyUrl}>{job.company}</ExternalLink> : job.company}
+									{job.employmentType && <span class="muted"> · {job.employmentType}</span>}
+								</p>
+							</div>
+							<p class="when muted">
+								<span>{formatRange(job.start, job.end)}</span>
+								<span class="duration">{formatDuration(job.start, job.end)}</span>
+							</p>
+						</header>
+						<p class="location muted">{job.location}</p>
+						<p class="summary">{job.summary}</p>
+						{job.highlights.length > 0 && (
+							<ul class="highlights">
+								{job.highlights.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						)}
+						{job.tech.length > 0 && (
+							<ul class="chips">
+								{job.tech.map((item) => (
+									<li class="chip">{item}</li>
+								))}
+							</ul>
+						)}
+					</article>
+				</li>
+			))
+		}
+	</ol>
+</Section>
+
+<style>
+	.timeline {
+		position: relative;
+		list-style: none;
+		margin: 0;
+		padding: 0 0 0 2rem;
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 0.45rem;
+		top: 0.5rem;
+		bottom: 0.5rem;
+		width: 2px;
+		background: linear-gradient(var(--accent-1), var(--accent-2), transparent);
+		border-radius: 2px;
+	}
+
+	.entry {
+		position: relative;
+	}
+
+	.dot {
+		position: absolute;
+		left: -2rem;
+		top: 1.6rem;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		background: var(--bg);
+		border: 3px solid var(--accent-1);
+		box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-1) 20%, transparent);
+	}
+
+	.job {
+		padding: 1.5rem 1.6rem;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
+
+	.company {
+		font-weight: 600;
+		margin-top: 0.2rem;
+	}
+
+	.when {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		font-size: 0.9rem;
+	}
+
+	.duration {
+		font-size: 0.8rem;
+		font-family: var(--font-mono);
+	}
+
+	.location {
+		font-size: 0.9rem;
+		margin-top: 0.25rem;
+	}
+
+	.summary {
+		margin-top: 0.9rem;
+	}
+
+	.highlights {
+		margin: 0.75rem 0 1rem;
+		padding-left: 1.2rem;
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.highlights li::marker {
+		color: var(--accent-2);
+	}
+
+	@media (max-width: 600px) {
+		.when {
+			align-items: flex-start;
+		}
+	}
+</style>

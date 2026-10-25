@@ -1,0 +1,29 @@
+# Newest first is not required; entries are sorted by `start` automatically.
+# Leave out `end` for your current role.
+
+- id: current-company
+  company: Current Company
+  companyUrl: https://example.com
+  role: Senior Flutter Engineer
+  location: City, Country (Hybrid)
+  employmentType: Full-time
+  start: "2023-01"
+  summary: One sentence about the product and your scope.
+  highlights:
+    - Led X, resulting in a measurable outcome (e.g. reduced crash rate by 60%).
+    - Built Y used by Z users / teams.
+    - Introduced a practice or tool that improved delivery speed.
+  tech: [Flutter, Dart, Riverpod, Melos, GitHub Actions]
+
+- id: previous-company
+  company: Previous Company
+  role: Flutter Developer
+  location: City, Country
+  employmentType: Full-time
+  start: "2020-03"
+  end: "2022-12"
+  summary: One sentence about the product and your scope.
+  highlights:
+    - Shipped N apps to the App Store and Google Play.
+    - Achievement with a number.
+  tech: [Flutter, Firebase, Bloc]
