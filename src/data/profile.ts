@@ -44,7 +44,6 @@ export const profile: Profile = {
 	],
 	stats: [
 		{ value: '11+', label: 'Years in QA' },
-		{ value: '50%', label: 'Faster regression cycles' },
 		{ value: '~25%', label: 'Faster time-to-market' },
 		{ value: '~40%', label: 'Fewer post-release hotfixes' },
 	],
