@@ -6,13 +6,16 @@
   role: Senior QA Engineer
   location: Remote, Germany
   start: "2024"
+  summary: QA for the Heartbeat energy-management app (iOS & Android) — owning mobile test automation, release quality and AI-native QA tooling.
   highlights:
-    - Built an Appium + BrowserStack automation framework from scratch (Java / TestNG), covering 70+ E2E scenarios across iOS and Android, integrated into GitHub Actions for nightly and PR runs.
-    - Established the cross-platform release QA process (web + mobile); owned regression strategy, exploratory testing and release sign-off — reducing post-release hotfixes by ~40%.
-    - Introduced AI-augmented QA workflows using Cursor (rules, skills, Linear MCP server) and GitHub Copilot, accelerating Page Object authoring and test maintenance by ~40%.
-    - Piloted AI-assisted PR review with Cursor Background Agents / Bugbot for test-code quality gates and earlier defect detection.
+    - Built the Appium + BrowserStack automation framework from scratch (Java / TestNG) — 90+ E2E tests and 35+ page objects across iOS and Android, with suites for three markets and the onboarding flows, running nightly in GitHub Actions on every new app build.
+    - Designed an AI-assisted nightly failure triage pipeline — a Claude-powered Cursor agent skill using the BrowserStack MCP server, plus an unattended CI job that classifies every failure (real regression, known issue or infra), posts a Slack summary with screenshots and video links, and auto-files deduplicated bug tickets across Android and iOS.
+    - Made the test repo agent-ready with Cursor skills, rules and AGENTS.md, so Cursor Cloud Agents author page objects and fix flaky tests in the team's conventions — accelerating Page Object authoring and test maintenance by ~40%.
+    - Introduced AI code review with project-specific Cursor Bugbot rules that block leaked secrets, broken page-object wiring, new flaky waits and test changes that would mask real product bugs.
+    - Automated the weekly release-testing kickoff — Testmo milestone, Linear release ticket and Slack announcement are created automatically, with live release-status reports for two apps and PR notifications with auto-merge on approval.
+    - Owned the cross-platform release QA process (web + mobile) — regression strategy, exploratory testing and release sign-off — reducing post-release hotfixes by ~40%.
     - Onboarded and mentored junior QA engineers; partnered with Product, Engineering and DevOps to embed quality gates earlier in the SDLC.
-  tech: [Appium, BrowserStack, Java, TestNG, GitHub Actions, Cursor, GitHub Copilot]
+  tech: [Appium, BrowserStack, Java, TestNG, Python, GitHub Actions, Claude, Cursor, MCP, Bugbot, Testmo, Linear]
 
 - id: powercloud
   company: powerCloud GmbH
