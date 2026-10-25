@@ -28,6 +28,7 @@
     - Automated and integrated 100+ E2E tests (UI & API) into the CI/CD pipeline, reducing regression cycles from 3 days to 1.5 days.
     - Drove shift-left initiatives including contract testing and pre-merge automation gates, partnering with developers and product owners from requirement reviews through release.
     - Mentored junior QA engineers and established code-review standards for the automation codebase.
+  tech: [CodeceptJS, Puppeteer, TypeScript / JavaScript, REST Assured, Postman, Jenkins, Azure DevOps, XRay]
 
 - id: lodestone-lead
   company: Lodestone Software Services
@@ -39,6 +40,7 @@
     - Led QA teams of 7 engineers for international clients including Reddit, Xapo and DoorDash.
     - Implemented streamlined QA processes (risk-based testing, prioritisation, defect triage), improving product quality and reducing time-to-market by ~25%.
     - Owned client communication, sprint planning and QA reporting to senior stakeholders; hired, onboarded and mentored QA engineers and defined career-growth tracks.
+  tech: [Appium, Java, REST Assured, JMeter, BrowserStack, Burp Suite]
 
 - id: lodestone-engineer
   company: Lodestone Software Services
@@ -49,3 +51,4 @@
   highlights:
     - Executed functional, regression, system, UAT and performance testing for web and mobile applications, working closely with developers to triage and resolve defects.
     - Authored detailed test plans, test cases and bug reports, ensuring thorough coverage and clean developer hand-offs.
+  tech: [Manual & exploratory testing, TestRail, Postman, Charles Proxy]
