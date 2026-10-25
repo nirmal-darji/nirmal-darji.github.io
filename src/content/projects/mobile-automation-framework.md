@@ -6,6 +6,8 @@ period: 2024 – present
 tech: [Appium, BrowserStack, Java, TestNG, GitHub Actions, Allure]
 featured: true
 order: 1
+cover: ../../assets/projects/mobile-automation-framework.svg
+coverAlt: Illustration of an Android and an iOS phone running automated tests, with a CI pipeline of passing build, Android and iOS stages.
 ---
 
 ## The challenge

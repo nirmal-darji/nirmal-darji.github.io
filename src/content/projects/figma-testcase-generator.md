@@ -5,6 +5,8 @@ role: Author
 period: "2026"
 tech: [TypeScript, React, Node.js, Express, Figma API, Gemini API, Tailwind CSS]
 order: 5
+cover: ../../assets/projects/figma-testcase-generator.svg
+coverAlt: Illustration of a Figma login screen design being turned by AI into a structured test case with steps and an expected result.
 ---
 
 ## The problem

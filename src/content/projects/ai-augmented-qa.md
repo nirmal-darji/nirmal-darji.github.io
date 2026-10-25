@@ -6,6 +6,8 @@ period: "2026"
 tech: [Claude, Cursor, Cursor Cloud Agents, Bugbot, MCP, GitHub Actions]
 featured: true
 order: 4
+cover: ../../assets/projects/ai-augmented-qa.svg
+coverAlt: Illustration of a code editor with agent skill and rule files, a Cloud Agent panel and a passing Bugbot review.
 ---
 
 ## The problem

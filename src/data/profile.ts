@@ -1,5 +1,9 @@
+import type { ImageMetadata } from 'astro';
+import portrait from '../assets/profile.jpg';
+
 export interface Profile {
 	name: string;
+	photo?: ImageMetadata;
 	headline: string;
 	tagline: string;
 	location: string;
@@ -21,6 +25,7 @@ export interface Profile {
 
 export const profile: Profile = {
 	name: 'Nirmal Darji',
+	photo: portrait,
 	headline: 'QA Lead · Mobile, Web & API Test Automation',
 	tagline:
 		'11+ years building and scaling QA functions — from bootstrapping automation from zero to leading QA teams and owning release sign-off for products serving millions of users.',
@@ -39,7 +44,6 @@ export const profile: Profile = {
 	stats: [
 		{ value: '11+', label: 'Years in QA' },
 		{ value: '7', label: 'QA engineers led' },
-		{ value: '90+', label: 'Automated mobile E2E tests' },
 		{ value: '~40%', label: 'Fewer post-release hotfixes' },
 	],
 	skills: [

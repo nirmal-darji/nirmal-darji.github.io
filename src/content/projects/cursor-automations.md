@@ -6,6 +6,8 @@ period: "2026"
 tech: [Cursor Automations, Claude Opus, Linear MCP, Slack]
 featured: true
 order: 3
+cover: ../../assets/projects/cursor-automations.svg
+coverAlt: Illustration of a Friday schedule and a Slack trigger feeding a Claude Opus agent that produces a project update and release notes in English, German, Dutch and Swedish.
 ---
 
 ## The problem

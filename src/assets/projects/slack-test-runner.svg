@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#151229"/><stop offset="1" stop-color="#0b1a24"/></linearGradient>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 90) scale(380)"><stop stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(660 300) scale(320)"><stop stop-color="#22d3ee" stop-opacity=".32"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#fff" stroke-opacity=".04"/></pattern>
+    <g id="ok"><circle r="9" fill="#22c55e"/><path d="M-4 0l3 3 5-6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <rect width="800" height="450" fill="url(#g2)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- chat -->
+  <g transform="translate(60 55)">
+    <rect width="440" height="340" rx="16" fill="#0f1222" fill-opacity=".9" stroke="#fff" stroke-opacity=".14"/>
+    <path d="M0 16a16 16 0 0 1 16-16h408a16 16 0 0 1 16 16v28H0z" fill="#fff" fill-opacity=".04"/>
+    <text x="20" y="28" fill="#e8eaf2" font-size="13" font-weight="700"># qa-test-runs</text>
+
+    <circle cx="36" cy="82" r="16" fill="url(#ac)"/>
+    <rect x="64" y="68" width="70" height="8" rx="4" fill="#fff" fill-opacity=".3"/>
+    <rect x="64" y="84" width="252" height="30" rx="8" fill="#22d3ee" fill-opacity=".1"/>
+    <text x="74" y="104" fill="#67e8f9" font-size="14">/hb-run android stg de</text>
+
+    <path d="M36 126V310" stroke="#fff" stroke-opacity=".1" stroke-width="2"/>
+
+    <rect x="58" y="140" width="28" height="28" rx="8" fill="#8b5cf6"/>
+    <path d="M68 148l9 6-9 6z" fill="#fff"/>
+    <rect x="98" y="142" width="90" height="8" rx="4" fill="#fff" fill-opacity=".3"/>
+    <text x="98" y="166" fill="#c7cbe0" font-size="13">Suite started &#183; run link</text>
+
+    <rect x="58" y="200" width="28" height="28" rx="8" fill="#8b5cf6"/>
+    <path d="M68 208l9 6-9 6z" fill="#fff"/>
+    <rect x="98" y="202" width="90" height="8" rx="4" fill="#fff" fill-opacity=".3"/>
+    <rect x="98" y="216" width="306" height="84" rx="10" fill="#22c55e" fill-opacity=".08" stroke="#22c55e" stroke-opacity=".35"/>
+    <use href="#ok" x="120" y="242"/>
+    <text x="138" y="247" fill="#4ade80" font-size="14" font-weight="700">Passed</text>
+    <rect x="112" y="266" width="200" height="7" rx="3.5" fill="#fff" fill-opacity=".16"/>
+    <rect x="112" y="280" width="150" height="7" rx="3.5" fill="#fff" fill-opacity=".1"/>
+  </g>
+
+  <!-- workflow -->
+  <path d="M502 120C560 120 560 110 600 110" stroke="url(#ac)" stroke-width="2" stroke-dasharray="4 6"/>
+  <path d="M600 340C560 340 560 300 502 300" stroke="url(#ac)" stroke-width="2" stroke-dasharray="4 6"/>
+  <path d="M510 294l-8 6 8 6" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-size="12" fill="#e8eaf2">
+    <rect x="600" y="86" width="150" height="48" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <use href="#ok" x="622" y="110"/><text x="642" y="114">dispatch</text>
+    <rect x="600" y="201" width="150" height="48" rx="12" fill="#fff" fill-opacity=".05" stroke="url(#ac)" stroke-opacity=".8"/>
+    <use href="#ok" x="622" y="225"/><text x="642" y="229">android &#183; stg</text>
+    <rect x="600" y="316" width="150" height="48" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <use href="#ok" x="622" y="340"/><text x="642" y="344">report</text>
+  </g>
+  <g stroke="#fff" stroke-opacity=".2" stroke-width="2">
+    <path d="M675 134V201"/><path d="M675 249V316"/>
+  </g>
+</svg>

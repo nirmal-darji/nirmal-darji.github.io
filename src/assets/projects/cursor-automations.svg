@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#151229"/><stop offset="1" stop-color="#0b1a24"/></linearGradient>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(390 225) scale(300)"><stop stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(680 420) scale(340)"><stop stop-color="#22d3ee" stop-opacity=".3"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#fff" stroke-opacity=".04"/></pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <rect width="800" height="450" fill="url(#g2)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- schedule trigger -->
+  <g transform="translate(70 70)">
+    <rect width="160" height="170" rx="16" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <path d="M0 16a16 16 0 0 1 16-16h128a16 16 0 0 1 16 16v28H0z" fill="url(#ac)"/>
+    <text x="80" y="29" fill="#0a0c18" font-size="15" font-weight="700" text-anchor="middle">FRIDAY</text>
+    <text x="80" y="112" fill="#e8eaf2" font-size="36" font-weight="700" text-anchor="middle">10:00</text>
+    <text x="80" y="145" fill="#9ba3b9" font-size="12" text-anchor="middle">every week</text>
+  </g>
+
+  <!-- slack trigger -->
+  <g transform="translate(70 280)">
+    <rect width="160" height="90" rx="16" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <text x="18" y="30" fill="#9ba3b9" font-size="12"># release</text>
+    <rect x="16" y="44" width="128" height="30" rx="8" fill="#22d3ee" fill-opacity=".12"/>
+    <text x="26" y="64" fill="#22d3ee" font-size="13">^release_notes</text>
+  </g>
+
+  <g stroke="url(#ac)" stroke-width="2" stroke-dasharray="4 6">
+    <path d="M232 155C300 155 300 225 340 225"/>
+    <path d="M232 325C300 325 300 225 340 225"/>
+  </g>
+
+  <!-- agent -->
+  <circle cx="390" cy="225" r="48" fill="#0f1222" stroke="url(#ac)" stroke-width="2.5"/>
+  <circle cx="390" cy="225" r="62" stroke="#a78bfa" stroke-opacity=".2"/>
+  <path d="M390 197c3 16 10 23 26 26-16 3-23 10-26 26-3-16-10-23-26-26 16-3 23-10 26-26z" fill="url(#ac)"/>
+  <text x="390" y="312" fill="#9ba3b9" font-size="13" text-anchor="middle">Claude Opus</text>
+
+  <g stroke="url(#ac)" stroke-width="2" stroke-opacity=".6">
+    <path d="M440 225C480 225 480 140 520 140"/>
+    <path d="M440 225C480 225 480 310 520 310"/>
+  </g>
+
+  <!-- project update -->
+  <g transform="translate(520 70)">
+    <rect width="210" height="140" rx="14" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <text x="18" y="32" fill="#e8eaf2" font-size="13" font-weight="700">Project update</text>
+    <rect x="18" y="46" width="58" height="20" rx="10" fill="#22c55e" fill-opacity=".18"/>
+    <text x="47" y="60" fill="#4ade80" font-size="11" text-anchor="middle">on track</text>
+    <g fill="#fff" fill-opacity=".16">
+      <rect x="18" y="80" width="170" height="7" rx="3.5"/>
+      <rect x="18" y="96" width="150" height="7" rx="3.5"/>
+      <rect x="18" y="112" width="120" height="7" rx="3.5"/>
+    </g>
+  </g>
+
+  <!-- release notes -->
+  <g transform="translate(520 240)">
+    <rect width="210" height="140" rx="14" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <text x="18" y="32" fill="#e8eaf2" font-size="13" font-weight="700">Release notes</text>
+    <g font-size="11" text-anchor="middle" fill="#c4b5fd">
+      <rect x="18" y="46" width="38" height="22" rx="6" fill="#8b5cf6" fill-opacity=".2"/><text x="37" y="61">EN</text>
+      <rect x="62" y="46" width="38" height="22" rx="6" fill="#8b5cf6" fill-opacity=".2"/><text x="81" y="61">DE</text>
+      <rect x="106" y="46" width="38" height="22" rx="6" fill="#8b5cf6" fill-opacity=".2"/><text x="125" y="61">NL</text>
+      <rect x="150" y="46" width="38" height="22" rx="6" fill="#8b5cf6" fill-opacity=".2"/><text x="169" y="61">SV</text>
+    </g>
+    <g fill="#fff" fill-opacity=".16">
+      <rect x="18" y="84" width="170" height="7" rx="3.5"/>
+      <rect x="18" y="100" width="140" height="7" rx="3.5"/>
+      <rect x="18" y="116" width="156" height="7" rx="3.5"/>
+    </g>
+  </g>
+</svg>

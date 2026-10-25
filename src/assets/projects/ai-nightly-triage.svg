@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#151229"/><stop offset="1" stop-color="#0b1a24"/></linearGradient>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 225) scale(300)"><stop stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(700 60) scale(320)"><stop stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#fff" stroke-opacity=".04"/></pattern>
+    <g id="fail"><circle r="8" fill="#f87171" fill-opacity=".2"/><path d="M-3.5 -3.5l7 7M3.5 -3.5l-7 7" stroke="#f87171" stroke-width="2" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <rect width="800" height="450" fill="url(#g2)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- failures in -->
+  <g transform="translate(60 95)">
+    <rect width="220" height="260" rx="16" fill="#fff" fill-opacity=".04" stroke="#fff" stroke-opacity=".12"/>
+    <text x="20" y="32" fill="#9ba3b9" font-size="13">nightly re-run</text>
+    <g fill="#fff" fill-opacity=".16">
+      <rect x="44" y="64" width="140" height="8" rx="4"/>
+      <rect x="44" y="104" width="110" height="8" rx="4"/>
+      <rect x="44" y="144" width="150" height="8" rx="4"/>
+      <rect x="44" y="184" width="96" height="8" rx="4"/>
+      <rect x="44" y="224" width="128" height="8" rx="4"/>
+    </g>
+    <use href="#fail" x="26" y="68"/><use href="#fail" x="26" y="108"/><use href="#fail" x="26" y="148"/><use href="#fail" x="26" y="188"/><use href="#fail" x="26" y="228"/>
+  </g>
+
+  <path d="M290 225H346" stroke="url(#ac)" stroke-width="2" stroke-dasharray="4 6"/>
+  <path d="M340 219l8 6-8 6" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- AI node -->
+  <circle cx="400" cy="225" r="48" fill="#0f1222" stroke="url(#ac)" stroke-width="2.5"/>
+  <circle cx="400" cy="225" r="62" stroke="#a78bfa" stroke-opacity=".2"/>
+  <path d="M400 197c3 16 10 23 26 26-16 3-23 10-26 26-3-16-10-23-26-26 16-3 23-10 26-26z" fill="url(#ac)"/>
+  <path d="M424 199c1 5 3 7 8 8-5 1-7 3-8 8-1-5-3-7-8-8 5-1 7-3 8-8z" fill="#22d3ee"/>
+
+  <!-- buckets -->
+  <g stroke="url(#ac)" stroke-width="2" stroke-opacity=".6">
+    <path d="M448 225C475 225 475 108 520 108"/>
+    <path d="M448 225C480 225 480 188 520 188"/>
+    <path d="M448 225C480 225 480 268 520 268"/>
+    <path d="M448 225C475 225 475 348 520 348"/>
+  </g>
+  <g font-size="14" fill="#e8eaf2">
+    <rect x="520" y="80" width="230" height="56" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="536" y="96" width="8" height="24" rx="4" fill="#f87171"/>
+    <text x="558" y="113">real regression</text>
+    <rect x="520" y="160" width="230" height="56" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="536" y="176" width="8" height="24" rx="4" fill="#fbbf24"/>
+    <text x="558" y="193">known issue</text>
+    <rect x="520" y="240" width="230" height="56" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="536" y="256" width="8" height="24" rx="4" fill="#60a5fa"/>
+    <text x="558" y="273">infrastructure</text>
+    <rect x="520" y="320" width="230" height="56" rx="12" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".12"/>
+    <rect x="536" y="336" width="8" height="24" rx="4" fill="#9ba3b9"/>
+    <text x="558" y="353">manual review</text>
+  </g>
+  <!-- ticket filed -->
+  <g transform="translate(716 108)">
+    <path d="M-12 -9h24v5a4 4 0 0 0 0 8v5h-24v-5a4 4 0 0 0 0-8z" fill="#f87171" fill-opacity=".2" stroke="#f87171" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+</svg>

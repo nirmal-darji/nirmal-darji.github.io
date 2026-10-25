@@ -20,6 +20,9 @@ interface Props {
 const { project } = Astro.props;
 const { data } = project;
 const { Content } = await render(project);
+// Vector covers scale without extra files; only raster covers need a srcset.
+const responsive =
+	data.cover?.format === 'svg' ? {} : { widths: [720, 1440], sizes: '(max-width: 800px) 100vw, 760px' };
 ---
 
 <BaseLayout title={data.title} description={data.summary}>
@@ -40,8 +43,7 @@ const { Content } = await render(project);
 					class="cover"
 					src={data.cover}
 					alt={data.coverAlt ?? ''}
-					widths={[720, 1440]}
-					sizes="(max-width: 800px) 100vw, 760px"
+					{...responsive}
 					loading="eager"
 				/>
 			)

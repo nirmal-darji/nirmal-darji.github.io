@@ -11,13 +11,16 @@ interface Props {
 const { project } = Astro.props;
 const { data } = project;
 const href = withBase(`/projects/${project.id}/`);
+// Vector covers scale without extra files; only raster covers need a srcset.
+const responsive =
+	data.cover?.format === 'svg' ? {} : { widths: [480, 960], sizes: '(max-width: 720px) 100vw, 480px' };
 ---
 
 <article class="card project reveal">
 	<div class="cover" aria-hidden={data.cover ? undefined : 'true'}>
 		{
 			data.cover ? (
-				<Image src={data.cover} alt={data.coverAlt ?? ''} widths={[480, 960]} sizes="(max-width: 720px) 100vw, 480px" />
+				<Image src={data.cover} alt={data.coverAlt ?? ''} {...responsive} />
 			) : (
 				<span class="placeholder">{data.title.charAt(0)}</span>
 			)

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#151229"/><stop offset="1" stop-color="#0b1a24"/></linearGradient>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160 60) scale(380)"><stop stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(660 380) scale(340)"><stop stop-color="#22d3ee" stop-opacity=".32"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#fff" stroke-opacity=".04"/></pattern>
+    <g id="file"><path d="M0 0h8l4 4v11H0z" stroke="#9ba3b9" stroke-width="1.4" stroke-linejoin="round"/></g>
+    <g id="ok"><circle r="8" fill="#22c55e"/><path d="M-3.5 0l2.5 2.5 4.5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#g1)"/>
+  <rect width="800" height="450" fill="url(#g2)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- editor -->
+  <g transform="translate(60 60)">
+    <rect width="460" height="330" rx="16" fill="#0f1222" fill-opacity=".9" stroke="#fff" stroke-opacity=".14"/>
+    <path d="M0 16a16 16 0 0 1 16-16h428a16 16 0 0 1 16 16v20H0z" fill="#fff" fill-opacity=".04"/>
+    <circle cx="20" cy="18" r="5" fill="#f87171"/><circle cx="37" cy="18" r="5" fill="#fbbf24"/><circle cx="54" cy="18" r="5" fill="#4ade80"/>
+    <text x="150" y="23" fill="#9ba3b9" font-size="12">LoginPage.java</text>
+    <path d="M130 36V330" stroke="#fff" stroke-opacity=".08"/>
+    <g font-size="12" fill="#c7cbe0">
+      <use href="#file" x="16" y="58"/><text x="36" y="70">SKILL.md</text>
+      <use href="#file" x="16" y="88"/><text x="36" y="100">rules/</text>
+      <use href="#file" x="16" y="118"/><text x="36" y="130">AGENTS.md</text>
+      <use href="#file" x="16" y="148"/><text x="36" y="160">BUGBOT.md</text>
+    </g>
+    <rect x="131" y="154" width="329" height="24" fill="#22d3ee" fill-opacity=".08"/>
+    <g>
+      <rect x="150" y="62" width="60" height="8" rx="4" fill="#a78bfa"/><rect x="218" y="62" width="110" height="8" rx="4" fill="#fff" fill-opacity=".2"/>
+      <rect x="170" y="86" width="44" height="8" rx="4" fill="#22d3ee" fill-opacity=".8"/><rect x="222" y="86" width="150" height="8" rx="4" fill="#fff" fill-opacity=".14"/>
+      <rect x="170" y="110" width="44" height="8" rx="4" fill="#22d3ee" fill-opacity=".8"/><rect x="222" y="110" width="120" height="8" rx="4" fill="#fff" fill-opacity=".14"/>
+      <rect x="170" y="138" width="70" height="8" rx="4" fill="#a78bfa"/><rect x="248" y="138" width="80" height="8" rx="4" fill="#fff" fill-opacity=".2"/>
+      <rect x="190" y="162" width="150" height="8" rx="4" fill="#fff" fill-opacity=".28"/><rect x="346" y="158" width="2" height="16" fill="#22d3ee"/>
+      <rect x="190" y="186" width="120" height="8" rx="4" fill="#fff" fill-opacity=".14"/>
+      <rect x="190" y="210" width="170" height="8" rx="4" fill="#fff" fill-opacity=".14"/>
+      <rect x="170" y="234" width="12" height="8" rx="4" fill="#a78bfa"/>
+      <rect x="150" y="262" width="12" height="8" rx="4" fill="#a78bfa"/>
+    </g>
+  </g>
+
+  <!-- agent panel -->
+  <g transform="translate(545 60)">
+    <rect width="195" height="200" rx="16" fill="#fff" fill-opacity=".05" stroke="url(#ac)" stroke-opacity=".7"/>
+    <path d="M28 18c2 10 6 14 16 16-10 2-14 6-16 16-2-10-6-14-16-16 10-2 14-6 16-16z" fill="url(#ac)"/>
+    <text x="54" y="40" fill="#e8eaf2" font-size="13" font-weight="700">Cloud Agent</text>
+    <rect x="16" y="64" width="150" height="34" rx="10" fill="#fff" fill-opacity=".07"/>
+    <rect x="28" y="77" width="110" height="7" rx="3.5" fill="#fff" fill-opacity=".22"/>
+    <rect x="36" y="110" width="143" height="52" rx="10" fill="#8b5cf6" fill-opacity=".18"/>
+    <rect x="48" y="123" width="112" height="7" rx="3.5" fill="#c4b5fd" fill-opacity=".7"/>
+    <rect x="48" y="139" width="80" height="7" rx="3.5" fill="#c4b5fd" fill-opacity=".5"/>
+    <text x="16" y="186" fill="#9ba3b9" font-size="11">MCP &#183; Linear &#183; BrowserStack</text>
+  </g>
+
+  <!-- review -->
+  <g transform="translate(545 280)">
+    <rect width="195" height="110" rx="16" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".14"/>
+    <path d="M30 18l16 6v12c0 10-7 17-16 20-9-3-16-10-16-20V24z" fill="#22c55e" fill-opacity=".15" stroke="#4ade80" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M24 37l4 4 8-9" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="42" fill="#e8eaf2" font-size="13" font-weight="700">Bugbot review</text>
+    <use href="#ok" x="24" y="78"/>
+    <rect x="40" y="74" width="120" height="7" rx="3.5" fill="#fff" fill-opacity=".18"/>
+  </g>
+</svg>

@@ -5,6 +5,8 @@ role: Senior QA Engineer · Author
 period: "2026"
 tech: [TypeScript, Vercel, Slack API, GitHub Actions API]
 order: 6
+cover: ../../assets/projects/slack-test-runner.svg
+coverAlt: Illustration of a Slack thread where a /hb-run command starts a GitHub Actions workflow and reports that the suite passed.
 ---
 
 ## The problem

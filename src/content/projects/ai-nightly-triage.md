@@ -6,6 +6,8 @@ period: "2026"
 tech: [Claude, Cursor, BrowserStack MCP, Python, GitHub Actions, Linear API, Slack API]
 featured: true
 order: 2
+cover: ../../assets/projects/ai-nightly-triage.svg
+coverAlt: Illustration of failed nightly tests flowing through an AI node into four categories — real regression, known issue, infrastructure and manual review.
 ---
 
 ## The problem

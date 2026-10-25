@@ -8,7 +8,7 @@ const projects = await getPublishedProjects();
 
 {
 	projects.length > 0 && (
-		<Section id="projects" eyebrow="Projects" title="Selected work">
+		<Section id="projects" eyebrow="Projects">
 			<div class="grid">
 				{projects.map((project) => (
 					<ProjectCard project={project} />
