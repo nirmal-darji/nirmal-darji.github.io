@@ -33,7 +33,7 @@ export const profile: Profile = {
 	about: [
 		'I build and scale QA functions across web, mobile and API platforms. I specialise in Appium and Playwright automation, CI/CD-integrated test pipelines, and release quality — and I have a track record of bootstrapping QA from zero.',
 		'As a QA Lead I led a team of 7 engineers delivering for international clients including Reddit, Xapo and DoorDash: owning test strategy, sprint planning and stakeholder reporting, and hiring, onboarding and mentoring QA engineers with clear career-growth tracks.',
-		'Today I build AI-native QA with Claude and Cursor: agent skills and MCP integrations that let AI agents write and fix tests in our conventions, project-specific AI code review, and an automated pipeline that triages nightly failures, reports them to Slack and files deduplicated bug tickets — so the team starts the day with answers instead of red builds.',
+		'Today I build AI-native QA with Claude and Cursor: agent skills, rules and MCP integrations that let AI agents write and fix tests in our conventions, project-specific AI code review, a pipeline that triages nightly failures and files deduplicated bug tickets, and Cursor Automations that publish weekly project updates and multilingual release notes on their own.',
 	],
 	stats: [
 		{ value: '11+', label: 'Years in QA' },

@@ -5,7 +5,7 @@ role: Senior QA Engineer · Initiative lead
 period: "2026"
 tech: [Claude, Cursor, Cursor Cloud Agents, Bugbot, MCP, GitHub Actions]
 featured: true
-order: 3
+order: 4
 ---
 
 ## The problem
@@ -14,8 +14,11 @@ General-purpose AI assistants write plausible but inconsistent test code — wro
 
 ## What I did
 
-- **Agent skills that encode our conventions** — a Page Object authoring skill with a template, locator priority rules, cross-platform requirements and anti-patterns, so AI-generated pages are indistinguishable from hand-written ones.
-- **Agent onboarding** — `AGENTS.md` and Cursor rules describe the toolchain, CI constraints and pull-request workflow, so Cursor Cloud Agents can work on the repo autonomously and fix flaky tests.
+- **Agent skills that encode our conventions:**
+  - *Appium Page Object author* — a template, locator priority rules, cross-platform requirements and anti-patterns, so AI-generated pages are indistinguishable from hand-written ones.
+  - *Nightly failure triage* — a step-by-step procedure with a failure taxonomy that the agent follows to classify nightly failures (see the triage project).
+- **Cursor rules** — a pull-request rule makes the agent collect the ticket, platform scope and risk notes first, enforce branch and title conventions, fill the PR template and open a draft — never inventing a ticket ID.
+- **Agent onboarding** — `AGENTS.md` describes the toolchain, BrowserStack constraints and known pitfalls, so Cursor Cloud Agents can work on the repo autonomously and fix flaky tests.
 - **MCP integrations** — the BrowserStack MCP server gives agents direct access to test sessions, logs and screenshots.
 - **AI code review** — project-specific Cursor Bugbot rules that block real risks (leaked secrets, unreachable page objects, new flaky waits, test changes that mask product bugs) while skipping style nitpicks. Bugbot replaced our earlier Gemini Code Assist setup as the single AI reviewer.
 - **Release automation** — the weekly release kickoff creates the Testmo milestone and the Linear release ticket and posts to Slack automatically, alongside release-status reports and pull-request notifications with auto-merge on approval.
@@ -23,5 +26,5 @@ General-purpose AI assistants write plausible but inconsistent test code — wro
 ## Outcome
 
 - ~40% faster Page Object authoring and test maintenance.
-- Pull requests reviewed automatically against the team's own quality rules.
+- Consistent, convention-following pull requests from humans and agents alike, reviewed automatically against the team's own quality rules.
 - Recurring QA admin work replaced by automation.

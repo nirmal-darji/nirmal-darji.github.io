@@ -12,10 +12,11 @@
     - Designed an AI-assisted nightly failure triage pipeline — a Claude-powered Cursor agent skill using the BrowserStack MCP server, plus an unattended CI job that classifies every failure (real regression, known issue or infra), posts a Slack summary with screenshots and video links, and auto-files deduplicated bug tickets across Android and iOS.
     - Made the test repo agent-ready with Cursor skills, rules and AGENTS.md, so Cursor Cloud Agents author page objects and fix flaky tests in the team's conventions — accelerating Page Object authoring and test maintenance by ~40%.
     - Introduced AI code review with project-specific Cursor Bugbot rules that block leaked secrets, broken page-object wiring, new flaky waits and test changes that would mask real product bugs.
-    - Automated the weekly release-testing kickoff — Testmo milestone, Linear release ticket and Slack announcement are created automatically, with live release-status reports for two apps and PR notifications with auto-merge on approval.
+    - Built Cursor Automations on Claude Opus — weekly Linear project status updates written and published from completed work, and Slack-triggered release notes generated from Linear tickets in English, German, Dutch and Swedish.
+    - Automated release and test operations — the weekly release kickoff creates the Testmo milestone, Linear ticket and Slack announcement; a /hb-run Slack command starts any platform, environment and market suite and reports the result in the thread.
     - Owned the cross-platform release QA process (web + mobile) — regression strategy, exploratory testing and release sign-off — reducing post-release hotfixes by ~40%.
     - Onboarded and mentored junior QA engineers; partnered with Product, Engineering and DevOps to embed quality gates earlier in the SDLC.
-  tech: [Appium, BrowserStack, Java, TestNG, Python, GitHub Actions, Claude, Cursor, MCP, Bugbot, Testmo, Linear]
+  tech: [Appium, BrowserStack, Java, TestNG, Python, TypeScript, GitHub Actions, Claude, Cursor Automations, MCP, Bugbot, Testmo, Linear, Vercel]
 
 - id: powercloud
   company: powerCloud GmbH
