@@ -1,0 +1,185 @@
+---
+import { Image } from 'astro:assets';
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import ExternalLink from './ExternalLink.astro';
+import { profile } from '../data/profile';
+import { recommendations } from '../data/recommendations';
+---
+
+{
+	recommendations.length > 0 && (
+		<Section id="recommendations" eyebrow="Recommendations" title="From people I've worked with">
+			<div class="carousel" data-recommendations>
+				<div class="track" tabindex="0" aria-label="Recommendation screenshots">
+					{recommendations.map((item, index) => (
+						<figure class:list={['slide', { 'is-active': index === 0 }]}>
+							<Image
+								src={item.image}
+								alt={item.alt}
+								widths={[640, 1024]}
+								sizes="(max-width: 1100px) 100vw, 1040px"
+							/>
+						</figure>
+					))}
+				</div>
+				<div class="controls">
+					<button type="button" data-dir="-1" aria-label="Previous recommendation">
+						<Icon name="arrow-left" />
+					</button>
+					<div class="dots">
+						{recommendations.map((item, index) => (
+							<button
+								type="button"
+								data-index={index}
+								aria-label={`Show recommendation from ${item.name}`}
+							/>
+						))}
+					</div>
+					<button type="button" data-dir="1" aria-label="Next recommendation">
+						<Icon name="arrow-right" />
+					</button>
+				</div>
+				<p class="status sr-only" aria-live="polite" />
+			</div>
+			{
+				profile.socials.linkedin && (
+					<p class="more">
+						<ExternalLink href={profile.socials.linkedin}>See them on LinkedIn</ExternalLink>
+					</p>
+				)
+			}
+		</Section>
+	)
+}
+
+<script>
+	const root = document.querySelector('[data-recommendations]');
+	if (root instanceof HTMLElement) {
+		const track = root.querySelector('.track');
+		const status = root.querySelector('.status');
+		if (track instanceof HTMLElement) {
+			const slides = [...track.querySelectorAll('.slide')];
+			const dots = [...root.querySelectorAll('[data-index]')];
+			let index = slides.findIndex((slide) => slide.classList.contains('is-active'));
+			if (index < 0) index = 0;
+
+			const show = (next: number) => {
+				const count = slides.length;
+				index = ((next % count) + count) % count;
+				slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === index));
+				dots.forEach((dot, dotIndex) => {
+					dot.classList.toggle('is-active', dotIndex === index);
+					if (dotIndex === index) dot.setAttribute('aria-current', 'true');
+					else dot.removeAttribute('aria-current');
+				});
+				const alt = slides[index]?.querySelector('img')?.alt ?? '';
+				if (status) status.textContent = `Recommendation ${index + 1} of ${count}. ${alt}`;
+			};
+
+			root.querySelector('[data-dir="-1"]')?.addEventListener('click', () => show(index - 1));
+			root.querySelector('[data-dir="1"]')?.addEventListener('click', () => show(index + 1));
+			for (const dot of dots) {
+				dot.addEventListener('click', () => show(Number((dot as HTMLElement).dataset.index)));
+			}
+			track.addEventListener('keydown', (event) => {
+				if (event.key === 'ArrowRight') {
+					event.preventDefault();
+					show(index + 1);
+				}
+				if (event.key === 'ArrowLeft') {
+					event.preventDefault();
+					show(index - 1);
+				}
+			});
+
+			let startX = 0;
+			track.addEventListener('pointerdown', (event) => {
+				startX = event.clientX;
+			});
+			track.addEventListener('pointerup', (event) => {
+				const delta = event.clientX - startX;
+				if (delta > 50) show(index - 1);
+				if (delta < -50) show(index + 1);
+			});
+			show(index);
+		}
+	}
+</script>
+
+<style>
+	.carousel {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.track {
+		border-radius: var(--radius);
+		touch-action: pan-y;
+	}
+
+	.slide {
+		display: none;
+		margin: 0;
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		overflow: hidden;
+	}
+
+	.slide.is-active {
+		display: block;
+	}
+
+	.slide :global(img) {
+		width: 100%;
+		height: auto;
+	}
+
+	.controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.controls button {
+		display: grid;
+		place-items: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		padding: 0;
+		border-radius: 999px;
+		border: 1px solid var(--border);
+		background: var(--surface);
+		color: var(--text);
+		cursor: pointer;
+	}
+
+	.controls button:hover {
+		background: var(--surface-hover);
+	}
+
+	.dots {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.4rem;
+	}
+
+	.dots button {
+		width: 0.55rem;
+		height: 0.55rem;
+		background: color-mix(in srgb, var(--text) 28%, transparent);
+	}
+
+	.dots button.is-active {
+		background: var(--gradient);
+		transform: scale(1.35);
+	}
+
+	.more {
+		text-align: center;
+		margin-top: 0.5rem;
+	}
+</style>

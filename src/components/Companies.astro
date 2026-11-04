@@ -1,0 +1,60 @@
+---
+import Section from './Section.astro';
+import { companies } from '../data/companies';
+---
+
+<Section id="companies" eyebrow="Companies" title="Where the work shipped">
+	<p class="intro muted reveal">
+		Product companies I worked with at Lodestone, then powerCloud and 1KOMMA5° Heartbeat AI directly.
+	</p>
+	<ul class="grid">
+		{
+			companies.map((company) => (
+				<li class="card logo reveal">
+					{company.logo && <img src={company.logo.src} alt="" width="28" height="28" />}
+					<span>{company.name}</span>
+				</li>
+			))
+		}
+	</ul>
+</Section>
+
+<style>
+	.intro {
+		max-width: 40rem;
+		margin-top: -0.75rem;
+		margin-bottom: 1.75rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+		gap: 0.75rem;
+		list-style: none;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.65rem;
+		min-height: 4.75rem;
+		padding: 1rem 1.15rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		text-align: center;
+	}
+
+	img {
+		width: 1.65rem;
+		height: 1.65rem;
+		flex: none;
+		filter: brightness(0) invert(1);
+	}
+
+	@media (prefers-color-scheme: light) {
+		img {
+			filter: none;
+		}
+	}
+</style>
