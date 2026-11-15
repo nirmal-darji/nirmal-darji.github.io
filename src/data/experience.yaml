@@ -1,4 +1,4 @@
-# Entries are sorted by `start` automatically. Leave out `end` for your current role.
+# Entries are sorted by `start` automatically. Leave out `end` to show Present.
 # Dates accept YYYY or YYYY-MM; the duration ("2 yrs 3 mos") only shows when months are known.
 
 - id: 1komma5
@@ -6,6 +6,7 @@
   role: Senior QA Engineer
   location: Remote, Germany
   start: "2024-09"
+  end: "2026-12"
   summary: QA for the Heartbeat energy-management app (iOS & Android) — owning mobile test automation, release quality and AI-native QA tooling.
   highlights:
     - Built the Appium + BrowserStack automation framework from scratch (Java / TestNG) — 90+ E2E tests and 35+ page objects across iOS and Android, with suites for three markets and the onboarding flows, running nightly in GitHub Actions on every new app build.

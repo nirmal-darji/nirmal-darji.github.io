@@ -19,7 +19,7 @@ Saving a file on your computer does not change the live site. The site updates o
 
 A few rules the build enforces:
 
-- Dates are `YYYY` or `YYYY-MM`. Leave `end` off the current job so the site shows Present.
+- Dates are `YYYY` or `YYYY-MM`. Leave `end` off a role to show Present. The 1KOMMA5° role ends `2026-12`.
 - A project with `draft: true` is left out of the site. `order` controls the sequence, lowest first.
 - Project covers and company logos live under `src/assets/`. Recommendation slides are PNGs. Put a new file in the matching folder and import it from the data file.
 - The CV in `public/cv.pdf` is the copy without a phone number. Do not replace it with a CV that includes a phone number.
