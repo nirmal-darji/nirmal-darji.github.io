@@ -12,7 +12,6 @@ export interface Profile {
 	/** Path relative to `public/`, e.g. `cv.pdf`. Leave undefined to hide the download button. */
 	cv?: string;
 	socials: {
-		github?: string;
 		linkedin?: string;
 	};
 	about: string[];
@@ -35,7 +34,6 @@ export const profile: Profile = {
 	email: 'n.darji13@gmail.com',
 	cv: 'cv.pdf',
 	socials: {
-		github: 'https://github.com/nirmal-darji',
 		linkedin: 'https://www.linkedin.com/in/nirmal-darji/',
 	},
 	about: [

@@ -51,7 +51,6 @@ const projects = defineCollection({
 			links: z
 				.object({
 					live: z.url().optional(),
-					repo: z.url().optional(),
 					appStore: z.url().optional(),
 					playStore: z.url().optional(),
 				})
